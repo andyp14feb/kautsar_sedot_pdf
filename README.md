@@ -22,6 +22,9 @@ The script automates the process of searching for government regulations (Peratu
 
 ## 🚀 How to Use (Step-by-step)
 
+### How To Video:
+[tutorial on youtube](https://youtu.be/ZyQ-ijTlpUk)
+
 ### 1. Clone or Download the Project
 You can either:
 
