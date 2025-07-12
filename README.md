@@ -1,45 +1,103 @@
 # Kautsar Sedot PDF
 
-## Purpose
-This project is designed to automate the process of extracting and organizing data from PDF files. The main functionality is handled by `main.py`, which processes PDFs using Python libraries, while `reset.bat` provides a convenient way to reset the environment or clear temporary files.
+> 🛠️ This script was created by request of my friend **Al Kautsar**, to automatically collect and download PDF documents from the JDIH Provinsi DKI Jakarta website.
 
-## Logic
-1. **PDF Processing**: `main.py` uses PyPDF2 to extract text and metadata from PDF files.
-2. **Data Organization**: Extracted data is saved in structured formats (e.g., CSV or JSON) for further analysis.
-3. **Reset Functionality**: `reset.bat` clears temporary files and logs to ensure a clean state for subsequent runs.
+---
 
-## Installation
-1. **Python Setup**: Ensure Python 3.9+ is installed. [Download Python](https://www.python.org/downloads/)
-2. **Dependencies**: Install required packages via pip:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Virtual Environment**: 
-   - Create a virtual environment:
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
-     ```
-   - For macOS/Linux:
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
-3. **Git Ignore**: The `.gitignore` file excludes unnecessary files (e.g., logs, caches) from version control.
+## 🎯 Purpose
 
-## How to Run
-1. **Run Main Script**:
-   ```bash
-   python main.py
-   ```
-   This will process PDFs in the current directory and save outputs to `output/`.
+The script automates the process of searching for government regulations (Peraturan), opening their detail pages, and downloading associated PDF files. It also avoids duplicate downloads and keeps a log of everything.
 
-2. **Reset Environment**:
-   ```bash
-   reset.bat
-   ```
-   This will delete temporary files and logs, preparing the environment for a fresh run.
+---
 
-## Notes
-- Ensure all PDF files are in the root directory or subfolders for full processing.
-- The `reset.bat` script is optimized for Windows environments. For macOS/Linux, use equivalent shell commands.
+## 📁 Features
+
+- Search documents using keywords
+- Automatically navigate pagination
+- Download PDF files from each result
+- Avoid duplicates using a log (`downloaded_files.json`)
+- `reset.bat` allows resetting downloaded log and files (Windows only)
+
+---
+
+## 🚀 How to Use (Step-by-step)
+
+### 1. Clone or Download the Project
+You can either:
+
+- 🧲 Clone using Git:
+  ```bash
+  git clone https://github.com/yourusername/kautsar-sedot-pdf.git
+  cd kautsar-sedot-pdf
+  ```
+
+- 📦 Or Download ZIP from GitHub, extract it, and open the folder.
+
+---
+
+### 2. Create and Activate a Virtual Environment
+
+#### 🪟 On Windows:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### 🐧 On Linux/macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### 3. Install Requirements
+```bash
+pip install -r requirements.txt
+```
+
+> Make sure Google Chrome is installed, as the script uses Selenium + ChromeDriver.
+
+---
+
+### 4. Run the Script
+
+```bash
+python main.py
+```
+
+You will be prompted to input a search keyword (e.g., `sekolah`, `lingkungan`, `sampah`, etc.).
+
+---
+
+### 5. View the Results
+
+- All downloaded PDF files are saved in the `downloads/` folder.
+- Metadata for each download is stored in `downloaded_files.json`.
+
+---
+
+## 🧼 Optional: Reset the Environment (Windows Only)
+
+To clear the `downloads/` folder and the `downloaded_files.json` log:
+
+```bash
+reset.bat
+```
+
+> If you're using macOS or Linux, you'll need to remove the folder and JSON manually.
+
+---
+
+## 📌 Notes
+
+- The script uses `Selenium`, so it will open Chrome windows as it works.
+- Avoid touching the mouse/keyboard while it runs to prevent disruption.
+- Download may take time depending on internet speed and number of pages.
+
+---
+
+## 🙏 Credit
+Thanks to chatgpt and gemini for help.
+
+---
