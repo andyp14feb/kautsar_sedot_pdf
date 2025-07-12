@@ -198,27 +198,6 @@ def scrape_jdih(keyword):
                         # Save the extracted meta data to the file
                         save_meta_data(meta_data)
 
-                    # try:
-                    #     # Find PDF link
-                    #     download_link = driver.find_element(By.XPATH, "/html/body/section[2]/div/div/div[2]/div[2]/div[2]/div/a")
-                    #     pdf_url = download_link.get_attribute("href")
-
-                    #     # Extract filename from URL
-                    #     filename_from_url = os.path.basename(pdf_url.split('?')[0])
-                    #     file_path = os.path.join(DOWNLOAD_DIR, filename_from_url)
-
-                    #     # Get document title
-                    #     title = driver.title.strip().split("|")[0]
-
-                    #     if not is_downloaded(pdf_url):
-                    #         download_pdf(pdf_url, file_path)
-                    #         log_download(title, pdf_url)
-                    #     else:
-                    #         print(f"⚠️ Already downloaded: {filename_from_url}")
-
-                    # except Exception as e:
-                    #     print(f"❌ PDF not found in detail page: {e}")
-
                     try:
                         # 1. Find PDF download link
                         download_link = driver.find_element(By.XPATH, "/html/body/section[2]/div/div/div[2]/div[2]/div[2]/div/a")
